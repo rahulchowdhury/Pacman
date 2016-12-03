@@ -47,6 +47,8 @@ Pacman.initialize(callGroups, new OnCallsCompleteListener() {
 });
 ```
 
+Make sure you set up Pacman BEFORE making any API calls, this is SUPER IMPORTANT.
+
 ## Notifying Pacman of API call completion
 Whenever you get a response from your API call you need to notify Pacman that the API call is done so that Pacman can register that event in its system. Now there can be two cases based on your API structure,
 
