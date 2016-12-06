@@ -1,18 +1,20 @@
+import android.support.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by rahulchowdhury on 12/2/16.
- * 
+ * <p>
  * Pacman - Parallel API Call Manager
- * 
+ * <p>
  * This utility class allows you to manage API calls that happen
  * in parallel and receive a combined or reduced callback when
  * all the specified calls have been performed
- * 
+ * <p>
  * Just setup Pacman with the required API calls and update as
  * and when the calls are made
- * 
+ * <p>
  * Made with love by Rahul Chowdhury
  */
 
@@ -57,9 +59,10 @@ public class Pacman {
      * @param callGroups              An ArrayList of CallGroup objects with details for the call groups
      * @param onCallsCompleteListener A callback listener to get notified when all calls are finished
      */
-    public static void initialize(List<CallGroup> callGroups,
-                                  OnCallsCompleteListener onCallsCompleteListener) {
+    public static void initialize(@NonNull List<CallGroup> callGroups,
+                                  @NonNull OnCallsCompleteListener onCallsCompleteListener) {
         mRequestedCallGroups.clear();
+        mCompletedCallGroups.clear();
         mRequestedCallGroups.addAll(callGroups);
 
         mOnCallsCompleteListener = onCallsCompleteListener;
